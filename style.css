@@ -202,7 +202,6 @@ button, input, select {
     color: var(--text-primary);
     font-size: 0.95rem;
     padding: 8px 16px;
-    direction: rtl;
 }
 .search-wrapper input::placeholder {
     color: var(--text-muted);
@@ -1297,7 +1296,6 @@ button, input, select {
     font-size: 0.95rem;
     transition: var(--transition-smooth);
     width: 100%;
-    direction: rtl;
 }
 .form-group input:focus {
     border-color: var(--accent-primary);
@@ -1431,7 +1429,6 @@ button, input, select {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
     gap: 40px;
-    direction: rtl;
 }
 @media (max-width: 768px) {
     .footer-container {
@@ -1465,7 +1462,7 @@ button, input, select {
 }
 .footer-links a:hover {
     color: var(--accent-primary);
-    padding-right: 4px;
+    padding-inline-start: 4px;
 }
 .footer-contact p {
     color: var(--text-secondary);
