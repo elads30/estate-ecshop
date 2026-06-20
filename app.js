@@ -434,6 +434,7 @@ const elements = {
     themeMoonIcon: document.getElementById('theme-moon-icon'),
     languageToggleBtn: document.getElementById('language-toggle-btn'),
     langBtnText: document.getElementById('lang-btn-text'),
+    installAppBtn: document.getElementById('install-app-btn'),
     cartDrawerTrigger: document.getElementById('cart-drawer-trigger'),
     cartDrawer: document.getElementById('cart-drawer'),
     cartDrawerClose: document.getElementById('cart-drawer-close'),
@@ -572,6 +573,21 @@ function setupEventListeners() {
 
     // Language toggle click
     elements.languageToggleBtn.addEventListener('click', toggleLanguage);
+
+    // Install PWA click
+    if (elements.installAppBtn) {
+        elements.installAppBtn.addEventListener('click', () => {
+            if (!deferredPrompt) return;
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    showToast(currentLang === 'he' ? 'האפליקציה הותקנה בהצלחה!' : 'App installed successfully!', '📱');
+                }
+                deferredPrompt = null;
+                elements.installAppBtn.classList.add('hidden');
+            });
+        });
+    }
     
     // Category filter buttons
     const categoryBtns = document.querySelectorAll('.nav-category-link');
@@ -1156,3 +1172,26 @@ function showLoginOverlay() {
 
 // Expose handleLoginSubmit globally
 window.handleLoginSubmit = handleLoginSubmit;
+
+// PWA Install Prompt Event Handling
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Prevent the mini-infobar from appearing on mobile
+    e.preventDefault();
+    // Stash the event so it can be triggered later.
+    deferredPrompt = e;
+    // Show install button in UI
+    const installBtn = document.getElementById('install-app-btn');
+    if (installBtn) {
+        installBtn.classList.remove('hidden');
+    }
+});
+
+window.addEventListener('appinstalled', (evt) => {
+    console.log('Estate App was installed.');
+    const installBtn = document.getElementById('install-app-btn');
+    if (installBtn) {
+        installBtn.classList.add('hidden');
+    }
+});
