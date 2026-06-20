@@ -3,9 +3,9 @@
 // Product Catalog Data
 const products = [
     {
-        id: 'aura-keyboard',
-        title: 'מקלדת מכנית AURA Eclipse',
-        brand: 'AURA',
+        id: 'estate-keyboard',
+        title: 'מקלדת מכנית Estate Eclipse',
+        brand: 'Estate',
         category: 'electronics',
         price: 749,
         rating: 4.9,
@@ -14,7 +14,7 @@ const products = [
         svgIcon: `<svg class="image-vector-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/></svg>`,
         description: 'חוויית הקלדה יוקרתית שאין שנייה לה. מקלדת מכנית מלאה עם גוף אלומיניום תעופתי מכורסם ב-CNC, סוויצ׳ים שקטים בהתאמה אישית ומסך OLED מובנה להצגת סטטוסים וחתימות מותאמות אישית.',
         specs: {
-            'סוג מתגים': 'AURA Linear Silent Yellow (משומנים מראש)',
+            'סוג מתגים': 'Estate Linear Silent Yellow (משומנים מראש)',
             'חיבור': 'חוטי Type-C / אלחוטי 2.4GHz / Bluetooth 5.1',
             'תאורה': 'RGB מלאה לכל מקש בנפרד',
             'חומר גוף': 'אלומיניום תעופתי 6063',
@@ -22,16 +22,16 @@ const products = [
         }
     },
     {
-        id: 'aura-cologne',
-        title: 'בושם בוטיק AURA Noir Extrait',
-        brand: 'AURA',
+        id: 'estate-cologne',
+        title: 'בושם בוטיק Estate Noir Extrait',
+        brand: 'Estate',
         category: 'fashion',
         price: 490,
         rating: 4.8,
         reviews: 96,
         imgClass: 'img-fragrance',
         svgIcon: `<svg class="image-vector-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 18a6 6 0 0 1 12 0v2H6v-2zM9 10a3 3 0 0 1 6 0v6H9v-6zM12 2v4M10 3h4"/></svg>`,
-        description: 'ניחוח יוניסקס עוצמתי וממכר שעוצב במיוחד עבור מותג AURA. שילוב מהפנט של עץ אלגום חם, ענבר עשיר, ונגיעות עדינות של תבלינים שחורים ווניל מדגסקר.',
+        description: 'ניחוח יוניסקס עוצמתי וממכר שעוצב במיוחד עבור מותג Estate. שילוב מהפנט של עץ אלגום חם, ענבר עשיר, ונגיעות עדינות של תבלינים שחורים ווניל מדגסקר.',
         specs: {
             'ריכוז': 'Extrait de Parfum (ריכוז שמן גבוה במיוחד)',
             'תווי ראש': 'פלפל שחור, הל, תאנה',
@@ -41,9 +41,9 @@ const products = [
         }
     },
     {
-        id: 'aura-speaker',
-        title: 'רמקול חכם AURA Horizon Touch',
-        brand: 'AURA',
+        id: 'estate-speaker',
+        title: 'רמקול חכם Estate Horizon Touch',
+        brand: 'Estate',
         category: 'home',
         price: 990,
         rating: 4.7,
@@ -56,13 +56,13 @@ const products = [
             'מסך': 'AMOLED Touch בגודל 4 אינץ׳',
             'קישוריות': 'Wi-Fi 6, Bluetooth 5.2, AirPlay 2, Spotify Connect',
             'בית חכם': 'תומך ב-Matter, Apple Home, Google Home',
-            'מיקרופונים': 'מערך של 4 מיקרופונים רחוקי שדה עם ביטול רעשים'
+            'מיקרופונים': 'מערך של 4 מיקרופונים רחוקי שדה WITH ביטול רעשים'
         }
     },
     {
-        id: 'aura-headphones',
-        title: 'אוזניות ANC אלחוטיות AURA Soundwave Pro',
-        brand: 'AURA',
+        id: 'estate-headphones',
+        title: 'אוזניות ANC אלחוטיות Estate Soundwave Pro',
+        brand: 'Estate',
         category: 'electronics',
         price: 1190,
         rating: 4.9,
@@ -325,8 +325,8 @@ function renderProducts() {
     let filteredList = [...products];
 
     // 1. Filter by category
-    if (currentCategory === 'aura') {
-        filteredList = filteredList.filter(p => p.brand === 'AURA');
+    if (currentCategory === 'estate') {
+        filteredList = filteredList.filter(p => p.brand === 'Estate');
     } else if (currentCategory !== 'all') {
         filteredList = filteredList.filter(p => p.category === currentCategory);
     }
@@ -364,12 +364,12 @@ function renderProducts() {
     }
 
     filteredList.forEach(product => {
-        const isAura = product.brand === 'AURA';
+        const isAura = product.brand === 'Estate';
         const cardClass = isAura ? 'product-card brand-aura-card' : 'product-card';
         
         const cardHtml = `
             <article class="${cardClass}" id="card-${product.id}">
-                ${isAura ? `<span class="brand-badge-tag">AURA</span>` : ''}
+                ${isAura ? `<span class="brand-badge-tag">Estate</span>` : ''}
                 <div class="product-card-image-box">
                     <div class="product-image-placeholder ${product.imgClass}">
                         ${product.svgIcon}
@@ -420,8 +420,8 @@ function filterByCategory(category) {
     // Update Title of Catalog
     if (category === 'all') {
         elements.catalogTitle.innerText = 'כל המוצרים';
-    } else if (category === 'aura') {
-        elements.catalogTitle.innerText = 'קולקציית העל AURA';
+    } else if (category === 'estate') {
+        elements.catalogTitle.innerText = 'קולקציית העל Estate';
     } else {
         elements.catalogTitle.innerText = translateCategory(category);
     }
@@ -539,7 +539,7 @@ function applyPromoCode() {
     const code = elements.promoInput.value.trim().toUpperCase();
     if (!code) return;
 
-    if (code === 'AURAFREE' || code === 'SAVE10') {
+    if (code === 'ESTATEFREE' || code === 'SAVE10') {
         appliedPromo = { code: code, rate: 0.10 }; // 10% discount
         showToast('קוד הקופון הוחל בהצלחה! קיבלת 10% הנחה.', '🎉');
         updateCartUI();
@@ -578,14 +578,14 @@ function updateCartUI() {
     let subtotal = 0;
     cart.forEach(item => {
         subtotal += item.price * item.quantity;
-        const isAura = item.brand === 'AURA';
+        const isAura = item.brand === 'Estate';
         
         const itemHtml = `
             <div class="cart-item">
                 <div class="cart-item-details">
                     <h4 class="cart-item-title">${item.title}</h4>
                     <span class="cart-item-price">₪${(item.price * item.quantity).toLocaleString()}</span>
-                    ${isAura ? `<span class="cart-item-brand">✨ מותג AURA</span>` : ''}
+                    ${isAura ? `<span class="cart-item-brand">✨ מותג Estate</span>` : ''}
                     
                     <div class="quantity-adjuster" style="margin-top: 8px; width: fit-content;">
                         <button class="qty-btn" onclick="changeQty('${item.id}', -1)">-</button>
@@ -652,7 +652,7 @@ function quickViewProduct(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
-    const isAura = product.brand === 'AURA';
+    const isAura = product.brand === 'Estate';
     
     // Formulate specification rows
     let specsHtml = '';
@@ -673,7 +673,7 @@ function quickViewProduct(productId) {
         </div>
         <div class="modal-product-details-box">
             <span class="modal-product-badge ${isAura ? 'badge-aura' : ''}">
-                ${isAura ? '✨ מותג הבית AURA' : translateCategory(product.category)}
+                ${isAura ? '✨ מותג הבית Estate' : translateCategory(product.category)}
             </span>
             <h2 class="modal-product-title">${product.title}</h2>
             
