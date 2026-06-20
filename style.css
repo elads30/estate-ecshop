@@ -1541,3 +1541,53 @@ button, input, select {
         margin: 0 auto;
     }
 }
+
+/* Login Overlay Styles */
+.login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(10, 11, 16, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.login-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+.login-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    width: 450px;
+    max-width: 90%;
+    padding: 40px;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.login-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+.login-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.login-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}

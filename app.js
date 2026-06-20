@@ -227,6 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProducts();
     setupEventListeners();
     initTheme();
+    checkLoginState();
 });
 
 // Theme Management (Light/Dark Mode)
@@ -673,7 +674,7 @@ function quickViewProduct(productId) {
         </div>
         <div class="modal-product-details-box">
             <span class="modal-product-badge ${isAura ? 'badge-aura' : ''}">
-                ${isAura ? '✨ מותג הבית Estate' : translateCategory(product.category)}
+                ${isAura ? '✨ מותג Estate' : translateCategory(product.category)}
             </span>
             <h2 class="modal-product-title">${product.title}</h2>
             
@@ -771,3 +772,65 @@ function handlePaymentSubmit(event) {
 
 // Expose handlePaymentSubmit globally
 window.handlePaymentSubmit = handlePaymentSubmit;
+
+// Login Management & Session Persistence
+function handleLoginSubmit(event) {
+    event.preventDefault();
+    const nameInput = document.getElementById('login-name');
+    const emailInput = document.getElementById('login-email');
+    const userName = nameInput.value.trim();
+    const userEmail = emailInput.value.trim();
+
+    if (!userName) return;
+
+    // Save to localStorage (persistent, does not get forgotten)
+    const user = { name: userName, email: userEmail };
+    localStorage.setItem('estate_user', JSON.stringify(user));
+
+    // Apply login UI state
+    applyLoginState(user);
+    showToast(`ברוך הבא, ${userName}!`, '👋');
+}
+
+function applyLoginState(user) {
+    const loginOverlay = document.getElementById('login-overlay');
+    if (loginOverlay) {
+        loginOverlay.classList.add('hidden');
+    }
+    
+    // Update header profile text
+    const greetingSpan = document.querySelector('.user-greeting');
+    if (greetingSpan) {
+        greetingSpan.innerText = `שלום, ${user.name}`;
+    }
+
+    // Auto-fill checkout form details
+    const checkoutNameInput = document.getElementById('checkout-name');
+    const checkoutEmailInput = document.getElementById('checkout-email');
+    if (checkoutNameInput) checkoutNameInput.value = user.name;
+    if (checkoutEmailInput) checkoutEmailInput.value = user.email;
+}
+
+function checkLoginState() {
+    const savedUser = localStorage.getItem('estate_user');
+    if (savedUser) {
+        try {
+            const user = JSON.parse(savedUser);
+            applyLoginState(user);
+        } catch (e) {
+            showLoginOverlay();
+        }
+    } else {
+        showLoginOverlay();
+    }
+}
+
+function showLoginOverlay() {
+    const loginOverlay = document.getElementById('login-overlay');
+    if (loginOverlay) {
+        loginOverlay.classList.remove('hidden');
+    }
+}
+
+// Expose handleLoginSubmit globally
+window.handleLoginSubmit = handleLoginSubmit;
