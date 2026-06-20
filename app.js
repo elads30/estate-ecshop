@@ -632,11 +632,11 @@ function closeCartDrawer() {
 
 // Save/Load Cart LocalStorage
 function saveCartToLocalStorage() {
-    localStorage.setItem('luxemarket_cart', JSON.stringify(cart));
+    localStorage.setItem('estate_cart', JSON.stringify(cart));
 }
 
 function loadCartFromLocalStorage() {
-    const saved = localStorage.getItem('luxemarket_cart');
+    const saved = localStorage.getItem('estate_cart');
     if (saved) {
         try {
             cart = JSON.parse(saved);
@@ -752,7 +752,7 @@ function handlePaymentSubmit(event) {
         payBtn.innerText = 'שלם כעת';
         
         // Generate mock order number
-        const randomOrderNum = `LM-${Math.floor(10000 + Math.random() * 90000)}`;
+        const randomOrderNum = `EST-${Math.floor(10000 + Math.random() * 90000)}`;
         document.getElementById('order-number-val').innerText = randomOrderNum;
 
         // Transition views
