@@ -1,126 +1,134 @@
-// Estate App Logic - Premium Store & Cart Management with Multi-language (Hebrew/English)
+// ECS App Logic - Dropshipping Store & PWA Mobile App Framework
 
-// Product Catalog Data with Multi-language Strings
+// Product Catalog Data with Dropshipping details (stock levels, discounts, active view stats)
 const products = [
     {
         id: 'estate-keyboard',
-        title: { he: 'מקלדת מכנית Estate Eclipse', en: 'Estate Eclipse Mechanical Keyboard' },
-        brand: 'Estate',
+        title: { he: 'מקלדת מכנית ECS Eclipse', en: 'ECS Eclipse Mechanical Keyboard' },
+        brand: 'ECS',
         category: 'electronics',
-        price: 749,
+        price: 499,
+        originalPrice: 799,
         rating: 4.9,
         reviews: 142,
+        stockLeft: 4,
+        activeViewers: 14,
+        badge: { he: '🔥 הנחה 40%', en: '🔥 40% OFF' },
         imgClass: 'img-keyboard',
         svgIcon: `<svg class="image-vector-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M6 8h.01M10 8h.01M14 8h.01M18 8h.01M6 12h.01M10 12h.01M14 12h.01M18 12h.01M7 16h10"/></svg>`,
         description: {
-            he: 'חוויית הקלדה יוקרתית שאין שנייה לה. מקלדת מכנית מלאה עם גוף אלומיניום תעופתי מכורסם ב-CNC, סוויצ׳ים שקטים בהתאמה אישית ומסך OLED מובנה להצגת סטטוסים וחתימות.',
-            en: 'An unparalleled luxury typing experience. Full mechanical keyboard with CNC-milled aircraft-grade aluminum, custom silent switches, and a built-in OLED display.'
+            he: 'מקלדת מכנית מלאה עם גוף אלומיניום תעופתי CNC, סוויצ׳ים שקטים משומנים מראש ומסך OLED מובנה להצגת סטטוסים וחתימות.',
+            en: 'Premium mechanical keyboard featuring aircraft-grade CNC aluminum, pre-lubed silent switches, and a custom OLED status display.'
         },
         specs: {
             he: {
-                'סוג מתגים': 'Estate Linear Silent Yellow (משומנים מראש)',
+                'סוג מתגים': 'ECS Linear Silent Yellow (משומנים מראש)',
                 'חיבור': 'חוטי Type-C / אלחוטי 2.4GHz / Bluetooth 5.1',
                 'תאורה': 'RGB מלאה לכל מקש בנפרד',
-                'חומר גוף': 'אלומיניום תעופתי 6063',
                 'סוללה': '4000mAh (עד 150 שעות ללא תאורה)'
             },
             en: {
-                'Switch Type': 'Estate Linear Silent Yellow (Pre-lubed)',
+                'Switch Type': 'ECS Linear Silent Yellow (Pre-lubed)',
                 'Connectivity': 'Wired Type-C / Wireless 2.4GHz / Bluetooth 5.1',
                 'Lighting': 'Per-key full RGB lighting',
-                'Body Material': '6063 Aircraft-grade aluminum',
                 'Battery': '4000mAh (up to 150 hours without RGB)'
             }
         }
     },
     {
         id: 'estate-cologne',
-        title: { he: 'בושם בוטיק Estate Noir Extrait', en: 'Estate Noir Extrait Cologne' },
-        brand: 'Estate',
+        title: { he: 'בושם בוטיק ECS Noir Extrait', en: 'ECS Noir Extrait Cologne' },
+        brand: 'ECS',
         category: 'fashion',
-        price: 490,
+        price: 290,
+        originalPrice: 450,
         rating: 4.8,
         reviews: 96,
+        stockLeft: 7,
+        activeViewers: 8,
+        badge: { he: '✨ רבי המכר', en: '✨ BESTSELLER' },
         imgClass: 'img-fragrance',
         svgIcon: `<svg class="image-vector-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 18a6 6 0 0 1 12 0v2H6v-2zM9 10a3 3 0 0 1 6 0v6H9v-6zM12 2v4M10 3h4"/></svg>`,
         description: {
-            he: 'ניחוח יוניסקס עוצמתי וממכר שעוצב במיוחד עבור מותג Estate. שילוב מהפנט של עץ אלגום חם, ענבר עשיר, ונגיעות עדינות של תבלינים שחורים.',
-            en: 'A powerful and addictive unisex fragrance designed for Estate. A hypnotic blend of warm sandalwood, rich amber, and black spices.'
+            he: 'ניחוח יוניסקס עוצמתי וממכר שעוצב במיוחד עבור מותג ECS. שילוב מהפנט של עץ אלגום חם, ענבר עשיר ותבלינים שחורים.',
+            en: 'A powerful and addictive unisex fragrance designed by ECS. A hypnotic blend of warm sandalwood, rich amber, and black spices.'
         },
         specs: {
             he: {
                 'ריכוז': 'Extrait de Parfum (ריכוז שמן גבוה במיוחד)',
                 'תווי ראש': 'פלפל שחור, הל, תאנה',
                 'תווי לב': 'קשמיר, ארז, סיגליות',
-                'תווי בסיס': 'סנדלווד, אמבר, וניל',
                 'נפח': '100 מ״ל'
             },
             en: {
                 'Concentration': 'Extrait de Parfum (Highest oil concentration)',
                 'Top Notes': 'Black pepper, Cardamom, Fig',
                 'Heart Notes': 'Cashmere, Cedarwood, Violet',
-                'Base Notes': 'Sandalwood, Amber, Vanilla',
                 'Volume': '100ml'
             }
         }
     },
     {
         id: 'estate-speaker',
-        title: { he: 'רמקול חכם Estate Horizon Touch', en: 'Estate Horizon Touch Smart Speaker' },
-        brand: 'Estate',
+        title: { he: 'רמקול חכם ECS Horizon Touch', en: 'ECS Horizon Touch Smart Speaker' },
+        brand: 'ECS',
         category: 'home',
-        price: 990,
+        price: 590,
+        originalPrice: 890,
         rating: 4.7,
         reviews: 84,
+        stockLeft: 3,
+        activeViewers: 22,
+        badge: { he: '🔥 מלאי מוגבל', en: '🔥 LIMITED STOCK' },
         imgClass: 'img-smartspeaker',
         svgIcon: `<svg class="image-vector-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="12" cy="12" r="4"/><path d="M12 10v4M10 12h4"/></svg>`,
         description: {
-            he: 'מרכז הבית החכם שלך בגימור מינימליסטי מרהיב של זכוכית מעוגלת ואלומיניום מוברש. מסך מגע אינטראקטיבי, סאונד היקפי ב-360 מעלות ועוזרת קולית מובנית.',
-            en: 'Your smart home hub in a stunning minimalist glass and brushed aluminum finish. Touch display, 360-degree immersive sound, and built-in voice assistant.'
+            he: 'רמקול חכם בגימור זכוכית מעוגלת ואלומיניום מוברש. מסך מגע אינטראקטיבי, סאונד 360 מעלות ועוזרת קולית מובנית.',
+            en: 'Smart home audio hub in a stunning minimalist glass and aluminum finish. Immersive 360 sound and built-in voice assistant.'
         },
         specs: {
             he: {
                 'הספק שמע': '60W RMS (סאונד 360 מעלות)',
                 'מסך': 'AMOLED Touch בגודל 4 אינץ׳',
                 'קישוריות': 'Wi-Fi 6, Bluetooth 5.2, AirPlay 2',
-                'בית חכם': 'תומך ב-Matter, Apple Home, Google Home',
-                'מיקרופונים': 'מערך של 4 מיקרופונים עם ביטול רעשים'
+                'בית חכם': 'תומך ב-Matter, Apple Home, Google Home'
             },
             en: {
                 'Audio Power': '60W RMS (360-degree sound)',
                 'Screen': '4-inch AMOLED Touchscreen',
                 'Connectivity': 'Wi-Fi 6, Bluetooth 5.2, AirPlay 2',
-                'Smart Home': 'Supports Matter, Apple Home, Google Home',
-                'Microphones': '4 far-field microphone array with noise canceling'
+                'Smart Home': 'Supports Matter, Apple Home, Google Home'
             }
         }
     },
     {
         id: 'estate-headphones',
-        title: { he: 'אוזניות ANC אלחוטיות Estate Soundwave Pro', en: 'Estate Soundwave Pro ANC Headphones' },
-        brand: 'Estate',
+        title: { he: 'אוזניות ANC אלחוטיות ECS Soundwave Pro', en: 'ECS Soundwave Pro ANC Headphones' },
+        brand: 'ECS',
         category: 'electronics',
-        price: 1190,
+        price: 690,
+        originalPrice: 1090,
         rating: 4.9,
         reviews: 218,
+        stockLeft: 5,
+        activeViewers: 19,
+        badge: { he: '⚡ מוצר מבוקש', en: '⚡ TRENDING' },
         imgClass: 'img-headphones',
         svgIcon: `<svg class="image-vector-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 14c0-4.97 4.03-9 9-9s9 4.03 9 9v4a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2m-16 0h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2z"/></svg>`,
         description: {
-            he: 'חוויית שמע עוטפת ונקייה מרעשים. ביטול רעשים אקטיבי היברידי (Hybrid ANC) מתקדם, כריות אוזן מעור כבש אמיתי ודרייברים מותאמים אישית בקוטר 40 מ״מ.',
-            en: 'An immersive noise-canceling audio experience. Advanced Hybrid ANC, genuine sheepskin leather earcups, and custom 40mm drivers for hi-res audio.'
+            he: 'אוזניות פרימיום בעלות ביטול רעשים אקטיבי היברידי (Hybrid ANC), כריות אוזן מעור כבש ודרייברים מותאמים אישית 40 מ״מ.',
+            en: 'Advanced Hybrid ANC wireless headphones, featuring genuine lambskin leather cups and custom 40mm beryllium drivers.'
         },
         specs: {
             he: {
                 'סוג דרייבר': 'דינמי 40 מ״מ עם דיאפרגמת בריליום',
                 'חיי סוללה': 'עד 45 שעות נגינה עם ANC פעיל',
-                'טעינה מהירה': '10 דקות טעינה מעניקות 5 שעות נגינה',
                 'ביטול רעשים': 'Hybrid ANC עד 42dB',
                 'משקל': '260 גרם'
             },
             en: {
                 'Driver Type': '40mm dynamic with beryllium diaphragm',
                 'Battery Life': 'Up to 45 hours with ANC on',
-                'Fast Charge': '10 min charge yields 5 hours play',
                 'Noise Canceling': 'Hybrid ANC up to 42dB',
                 'Weight': '260g'
             }
@@ -131,9 +139,13 @@ const products = [
         title: { he: 'נעלי ריצה Veloce Cloud', en: 'Veloce Cloud Running Shoes' },
         brand: 'Veloce',
         category: 'fashion',
-        price: 349,
+        price: 189,
+        originalPrice: 349,
         rating: 4.6,
         reviews: 310,
+        stockLeft: 12,
+        activeViewers: 5,
+        badge: { he: '👟 מבצע חם', en: '👟 DEAL' },
         imgClass: 'img-shoes',
         svgIcon: `<svg class="image-vector-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 18h18M6 18c0-4 1-8 6-8s6 4 9 8M8 10V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/></svg>`,
         description: {
@@ -160,9 +172,13 @@ const products = [
         title: { he: 'שעון חכם Chronos Titanium', en: 'Chronos Titanium Smart Watch' },
         brand: 'Chronos',
         category: 'electronics',
-        price: 1399,
+        price: 699,
+        originalPrice: 1399,
         rating: 4.8,
         reviews: 175,
+        stockLeft: 8,
+        activeViewers: 12,
+        badge: { he: '💎 50% הנחה', en: '💎 50% OFF' },
         imgClass: 'img-watch',
         svgIcon: `<svg class="image-vector-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="7"/><path d="M12 9v3l2 2M12 5V2M12 19v3M5 12H2M19 12h3"/></svg>`,
         description: {
@@ -189,9 +205,13 @@ const products = [
         title: { he: 'מנורת שולחן Lumina Smart OLED', en: 'Lumina Smart OLED Desk Lamp' },
         brand: 'Lumina',
         category: 'home',
-        price: 249,
+        price: 139,
+        originalPrice: 249,
         rating: 4.5,
         reviews: 89,
+        stockLeft: 9,
+        activeViewers: 6,
+        badge: { he: '💡 הכי פופולרי', en: '💡 POPULAR' },
         imgClass: 'img-lamp',
         svgIcon: `<svg class="image-vector-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 22h6M12 18v4M6 12a6 6 0 0 1 12 0v6H6v-6zM12 2a3 3 0 0 1 3 3v2H9V5a3 3 0 0 1 3-3z"/></svg>`,
         description: {
@@ -218,9 +238,13 @@ const products = [
         title: { he: 'תיק גב Nomad Travel 30L', en: 'Nomad Travel Backpack 30L' },
         brand: 'Nomad',
         category: 'fashion',
-        price: 420,
+        price: 249,
+        originalPrice: 420,
         rating: 4.7,
         reviews: 130,
+        stockLeft: 15,
+        activeViewers: 4,
+        badge: { he: '🎒 שימושי', en: '🎒 USEFUL' },
         imgClass: 'img-backpack',
         svgIcon: `<svg class="image-vector-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 20V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2zM9 4V2h6v2M12 8v8M9 12h6"/></svg>`,
         description: {
@@ -247,9 +271,13 @@ const products = [
         title: { he: 'מכונת אספרסו קומפקטית Retro Cafe', en: 'Retro Cafe Espresso Machine' },
         brand: 'Barista',
         category: 'home',
-        price: 649,
+        price: 390,
+        originalPrice: 649,
         rating: 4.6,
         reviews: 114,
+        stockLeft: 2,
+        activeViewers: 34,
+        badge: { he: '☕ טרנד חם', en: '☕ SUPER TREND' },
         imgClass: 'img-espresso',
         svgIcon: `<svg class="image-vector-symbol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2h12v3H6V2zm1 3v13a4 4 0 0 0 4 4h2a4 4 0 0 0 4-4V5H7zm4 7h2M9 15h6"/></svg>`,
         description: {
@@ -276,24 +304,24 @@ const products = [
 // UI Translations
 const translations = {
     he: {
-        announcement: 'משלוח חינם על כל מוצרי מותג העל <strong>Estate</strong>! השתמשו בקוד: <span class="promo-code">ESTATEFREE</span>',
+        announcement: 'משלוח חינם על כל מוצרי מותג העל <strong>ECS</strong>! השתמשו בקוד: <span class="promo-code">ECSFREE</span>',
         searchPlaceholder: 'חפשו מוצרים, מותגים או קטגוריות...',
         userGreeting: 'שלום',
         catAll: 'הכל',
-        catEstate: '✨ מותג Estate',
+        catEstate: '✨ מותג ECS',
         catElectronics: 'אלקטרוניקה',
         catFashion: 'אופנה וביגוד',
         catHome: 'בית ועיצוב',
-        heroTag: 'הכירו את מותג Estate',
-        heroTitle: 'Estate Eclipse',
+        heroTag: 'הכירו את מותג ECS',
+        heroTitle: 'ECS Eclipse',
         heroSubtitle: 'מקלדת מכנית יוקרתית בגימור אלומיניום תעופתי, מתגים שקטים בהתאמה אישית ומסך OLED מובנה.',
         heroExplore: 'גלה עוד',
         heroAddToCart: 'הוסף לעגלה',
-        brandRibbonTitle: 'קולקציית הפרימיום הבלעדית של Estate',
+        brandRibbonTitle: 'קולקציית הפרימיום הבלעדית של ECS',
         brandRibbonDesc: 'חוויית משתמש מעוצבת, חומרים איכותיים וטכנולוגיה עילית. עוצב בסטנדרט ללא פשרות.',
         brandRibbonBtn: 'צפה בכל הקולקציה',
         catalogTitleAll: 'כל המוצרים',
-        catalogTitleEstate: 'קולקציית העל Estate',
+        catalogTitleEstate: 'קולקציית העל ECS',
         catalogTitleElectronics: 'אלקטרוניקה',
         catalogTitleFashion: 'אופנה וביגוד',
         catalogTitleHome: 'בית ועיצוב',
@@ -319,50 +347,54 @@ const translations = {
         checkoutCvv: 'CVV',
         checkoutPayBtn: 'שלם כעת',
         checkoutSuccessTitle: 'ההזמנה הושלמה בהצלחה!',
-        checkoutSuccessDesc: 'תודה שקנית ב-<strong>Estate</strong>. אישור הזמנה נשלח לאימייל שלך.',
+        checkoutSuccessDesc: 'תודה שקנית ב-<strong>ECS</strong>. אישור הזמנה נשלח לאימייל שלך.',
         checkoutOrderNo: 'מספר הזמנה:',
         checkoutDeliveryTime: 'זמן אספקה משוער:',
         checkoutDeliveryTimeVal: 'עד 3 ימי עסקים',
         checkoutBackBtn: 'חזרה לחנות',
-        loginTitle: 'ברוכים הבאים ל-Estate',
+        loginTitle: 'ברוכים הבאים ל-ECS',
         loginDesc: 'אנא התחבר כדי לשמור את עגלת הקניות והיסטוריית ההזמנות שלך.',
         loginNameLabel: 'שם מלא',
         loginEmailLabel: 'כתובת אימייל',
         loginBtn: 'כניסה לחנות',
-        footerDesc: 'חנות מקוונת המאפשרת לך ליהנות ממוצרי מותגים בינלאומיים לצד מוצרי מותג Estate היוקרתי בעיצובים בלעדיים.',
+        footerDesc: 'חנות מקוונת המאפשרת לך ליהנות ממוצרי מותגים בינלאומיים לצד מוצרי מותג ECS היוקרתי בעיצובים בלעדיים.',
         footerNavTitle: 'ניווט מהיר',
         footerContactTitle: 'שירות לקוחות',
         footerPhone: 'טלפון: 1-800-200-300',
-        footerMail: 'מייל: support@estate.co.il',
-        footerCopyright: '&copy; 2026 Estate Inc. כל הזכויות שמורות. מעוצב בגאווה עבור אביהו.',
+        footerMail: 'מייל: support@ecs.co.il',
+        footerCopyright: '&copy; 2026 ECS Inc. כל הזכויות שמורות. מעוצב בגאווה עבור אביהו.',
         toastAddCart: 'המוצר נוסף לעגלה!',
         toastPromoApplied: 'קוד הקופון הוחל בהצלחה! קיבלת 10% הנחה.',
         toastPromoInvalid: 'קוד קופון לא בתוקף.',
         toastOrderCompleted: 'הרכישה הושלמה בהצלחה!',
         toastWelcome: 'ברוך הבא',
         quickViewBtn: 'תצוגה מהירה',
-        qtyBtnText: 'כמות',
-        priceText: 'מחיר'
+        bottomNavHome: 'ראשי',
+        bottomNavCategories: 'קטגוריות',
+        bottomNavCart: 'עגלה',
+        bottomNavProfile: 'אישי',
+        stockText: 'יחידות אחרונות במלאי!',
+        viewingText: 'אנשים צופים במוצר כעת!'
     },
     en: {
-        announcement: 'Free shipping on all <strong>Estate</strong> premium products! Use code: <span class="promo-code">ESTATEFREE</span>',
+        announcement: 'Free shipping on all <strong>ECS</strong> premium products! Use code: <span class="promo-code">ECSFREE</span>',
         searchPlaceholder: 'Search products, brands or categories...',
         userGreeting: 'Hello',
         catAll: 'All',
-        catEstate: '✨ Estate Brand',
+        catEstate: '✨ ECS Brand',
         catElectronics: 'Electronics',
         catFashion: 'Fashion & Apparel',
         catHome: 'Home & Living',
-        heroTag: 'Introducing Estate Brand',
-        heroTitle: 'Estate Eclipse',
+        heroTag: 'Introducing ECS Brand',
+        heroTitle: 'ECS Eclipse',
         heroSubtitle: 'A premium mechanical keyboard with aircraft-grade aluminum casing, custom silent switches, and a built-in OLED display.',
         heroExplore: 'Explore More',
         heroAddToCart: 'Add to Cart',
-        brandRibbonTitle: 'Estate Premium Exclusive Collection',
+        brandRibbonTitle: 'ECS Premium Exclusive Collection',
         brandRibbonDesc: 'Designed user experience, high-quality materials and top-tier technology. Crafted without compromises.',
         brandRibbonBtn: 'View Entire Collection',
         catalogTitleAll: 'All Products',
-        catalogTitleEstate: 'Estate Premium Collection',
+        catalogTitleEstate: 'ECS Premium Collection',
         catalogTitleElectronics: 'Electronics',
         catalogTitleFashion: 'Fashion & Apparel',
         catalogTitleHome: 'Home & Living',
@@ -388,30 +420,34 @@ const translations = {
         checkoutCvv: 'CVV',
         checkoutPayBtn: 'Pay Now',
         checkoutSuccessTitle: 'Order Completed Successfully!',
-        checkoutSuccessDesc: 'Thank you for shopping at <strong>Estate</strong>. An order confirmation email has been sent.',
+        checkoutSuccessDesc: 'Thank you for shopping at <strong>ECS</strong>. An order confirmation email has been sent.',
         checkoutOrderNo: 'Order Number:',
         checkoutDeliveryTime: 'Estimated Delivery:',
         checkoutDeliveryTimeVal: 'Up to 3 business days',
         checkoutBackBtn: 'Back to Store',
-        loginTitle: 'Welcome to Estate',
+        loginTitle: 'Welcome to ECS',
         loginDesc: 'Please log in to save your shopping cart and order history.',
         loginNameLabel: 'Full Name',
         loginEmailLabel: 'Email Address',
         loginBtn: 'Enter Store',
-        footerDesc: 'An online store featuring international brands alongside the exclusive Estate premium products.',
+        footerDesc: 'An online store featuring international brands alongside the exclusive ECS premium products.',
         footerNavTitle: 'Quick Links',
         footerContactTitle: 'Customer Service',
         footerPhone: 'Phone: 1-800-200-300',
-        footerMail: 'Email: support@estate.co.il',
-        footerCopyright: '&copy; 2026 Estate Inc. All rights reserved. Proudly designed for Avihu.',
+        footerMail: 'Email: support@ecs.co.il',
+        footerCopyright: '&copy; 2026 ECS Inc. All rights reserved. Proudly designed for Avihu.',
         toastAddCart: 'Product added to cart!',
         toastPromoApplied: 'Promo code applied successfully! You got a 10% discount.',
         toastPromoInvalid: 'Invalid promo code.',
         toastOrderCompleted: 'Purchase completed successfully!',
         toastWelcome: 'Welcome',
         quickViewBtn: 'Quick View',
-        qtyBtnText: 'Qty',
-        priceText: 'Price'
+        bottomNavHome: 'Home',
+        bottomNavCategories: 'Categories',
+        bottomNavCart: 'Cart',
+        bottomNavProfile: 'Profile',
+        stockText: 'left in stock!',
+        viewingText: 'people are viewing right now!'
     }
 };
 
@@ -549,7 +585,7 @@ function applyLanguage(lang) {
     
     // Update footer contacts details directly
     document.getElementById('footer-phone-text').innerText = lang === 'he' ? 'טלפון: 1-800-200-300' : 'Phone: 1-800-200-300';
-    document.getElementById('footer-mail-text').innerText = lang === 'he' ? 'מייל: support@estate.co.il' : 'Email: support@estate.co.il';
+    document.getElementById('footer-mail-text').innerText = lang === 'he' ? 'מייל: support@ecs.co.il' : 'Email: support@ecs.co.il';
 
     // Update greeting text based on logged user
     const savedUser = localStorage.getItem('estate_user');
@@ -596,6 +632,19 @@ function setupEventListeners() {
             categoryBtns.forEach(b => b.classList.remove('active'));
             e.currentTarget.classList.add('active');
             filterByCategory(e.currentTarget.getAttribute('data-category'));
+        });
+    });
+
+    // Mobile Bottom Navigation Tabs Event Handler
+    const bottomNavLinks = document.querySelectorAll('.bottom-nav-link');
+    bottomNavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            bottomNavLinks.forEach(l => l.classList.remove('active'));
+            const clickedBtn = e.currentTarget;
+            clickedBtn.classList.add('active');
+            
+            const targetTab = clickedBtn.getAttribute('data-tab');
+            handleMobileTabSwitch(targetTab);
         });
     });
 
@@ -650,13 +699,42 @@ function setupEventListeners() {
     elements.modalCloseOverlay.addEventListener('click', closeQuickViewModal);
 }
 
+// Handle Mobile Bottom Nav Tab Navigation
+function handleMobileTabSwitch(tab) {
+    if (tab === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        filterByCategory('all');
+        const allNavBtn = document.getElementById('cat-all');
+        if (allNavBtn) {
+            document.querySelectorAll('.nav-category-link').forEach(b => b.classList.remove('active'));
+            allNavBtn.classList.add('active');
+        }
+    } else if (tab === 'categories') {
+        const catNav = document.querySelector('.category-nav');
+        if (catNav) {
+            catNav.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        showToast(currentLang === 'he' ? 'בחר קטגוריה למעלה לסינון מהיר' : 'Select a category above to filter products', '🔍');
+    } else if (tab === 'cart') {
+        openCartDrawer();
+    } else if (tab === 'profile') {
+        const savedUser = localStorage.getItem('estate_user');
+        if (!savedUser) {
+            showLoginOverlay();
+        } else {
+            const user = JSON.parse(savedUser);
+            showToast(`${translations[currentLang].userGreeting}, ${user.name}! (${user.email})`, '👤');
+        }
+    }
+}
+
 // Render Products Catalog
 function renderProducts() {
     let filteredList = [...products];
 
     // 1. Filter by category
     if (currentCategory === 'estate') {
-        filteredList = filteredList.filter(p => p.brand === 'Estate');
+        filteredList = filteredList.filter(p => p.brand === 'ECS');
     } else if (currentCategory !== 'all') {
         filteredList = filteredList.filter(p => p.category === currentCategory);
     }
@@ -679,7 +757,6 @@ function renderProducts() {
     } else if (currentSort === 'rating') {
         filteredList.sort((a, b) => b.rating - a.rating);
     }
-    // 'featured' keeps default catalog order
 
     // Update catalog UI
     elements.productGrid.innerHTML = '';
@@ -694,12 +771,17 @@ function renderProducts() {
     }
 
     filteredList.forEach(product => {
-        const isEstate = product.brand === 'Estate';
-        const cardClass = isEstate ? 'product-card brand-aura-card' : 'product-card';
+        const isECS = product.brand === 'ECS';
+        const cardClass = isECS ? 'product-card brand-aura-card' : 'product-card';
+        
+        // Compute stock progress bar percentage (out of 20 units)
+        const stockPercent = (product.stockLeft / 20) * 100;
         
         const cardHtml = `
             <article class="${cardClass}" id="card-${product.id}">
-                ${isEstate ? `<span class="brand-badge-tag">Estate</span>` : ''}
+                <!-- Dropshipping discount tag -->
+                <span class="dropship-badge">${product.badge[currentLang]}</span>
+                
                 <div class="product-card-image-box">
                     <div class="product-image-placeholder ${product.imgClass}">
                         ${product.svgIcon}
@@ -718,9 +800,21 @@ function renderProducts() {
                         <span class="rating-count">(${product.reviews})</span>
                     </div>
 
+                    <!-- Dropshipping Stock Level Progress indicator -->
+                    <div class="stock-progress-container" style="margin-top: 5px;">
+                        <span class="urgency-text">
+                            <span class="pulse-dot" style="width:6px; height:6px; background:#ef4444; border-radius:50%; display:inline-block; animation: pulseGlow 1s infinite;"></span>
+                            <span>${product.stockLeft} ${translations[currentLang].stockText}</span>
+                        </span>
+                        <div class="stock-progress-bar">
+                            <div class="stock-progress-fill" style="width: ${stockPercent}%"></div>
+                        </div>
+                    </div>
+
                     <div class="product-card-price-buy">
                         <div class="product-price-label">
-                            <span class="product-price-val">₪${product.price.toLocaleString()}</span>
+                            <span class="product-price-val" style="color: #ef4444;">₪${product.price.toLocaleString()}</span>
+                            <span class="product-original-price" style="text-decoration: line-through; color: var(--text-muted); font-size: 0.8rem;">₪${product.originalPrice.toLocaleString()}</span>
                         </div>
                         <button class="card-buy-btn" onclick="addToCartDirect('${product.id}')" aria-label="Add to cart">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
@@ -878,7 +972,7 @@ function applyPromoCode() {
     const code = elements.promoInput.value.trim().toUpperCase();
     if (!code) return;
 
-    if (code === 'ESTATEFREE' || code === 'SAVE10') {
+    if (code === 'ECSFREE' || code === 'SAVE10') {
         appliedPromo = { code: code, rate: 0.10 }; // 10% discount
         showToast(translations[currentLang].toastPromoApplied, '🎉');
         updateCartUI();
@@ -893,6 +987,12 @@ function updateCartUI() {
     const totalQty = cart.reduce((sum, item) => sum + item.quantity, 0);
     elements.cartCountBadge.innerText = totalQty;
     elements.cartTotalQty.innerText = totalQty;
+
+    // Update bottom nav cart badge as well
+    const bottomCartBadge = document.getElementById('bottom-cart-badge');
+    if (bottomCartBadge) {
+        bottomCartBadge.innerText = totalQty;
+    }
 
     // Pop animation on badge
     elements.cartCountBadge.classList.remove('animate-pop');
@@ -917,14 +1017,14 @@ function updateCartUI() {
     let subtotal = 0;
     cart.forEach(item => {
         subtotal += item.price * item.quantity;
-        const isEstate = item.brand === 'Estate';
+        const isECS = item.brand === 'ECS';
         
         const itemHtml = `
             <div class="cart-item">
                 <div class="cart-item-details">
                     <h4 class="cart-item-title">${item.title[currentLang]}</h4>
                     <span class="cart-item-price">₪${(item.price * item.quantity).toLocaleString()}</span>
-                    ${isEstate ? `<span class="cart-item-brand">✨ ${translations[currentLang].catEstate}</span>` : ''}
+                    ${isECS ? `<span class="cart-item-brand">✨ ${translations[currentLang].catEstate}</span>` : ''}
                     
                     <div class="quantity-adjuster" style="margin-top: 8px; width: fit-content;">
                         <button class="qty-btn" onclick="changeQty('${item.id}', -1)">-</button>
@@ -991,9 +1091,9 @@ function quickViewProduct(productId) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
 
-    const isEstate = product.brand === 'Estate';
+    const isECS = product.brand === 'ECS';
     
-    // Formulate specification rows based on current language
+    // Formulate specification rows
     let specsHtml = '';
     for (const [key, value] of Object.entries(product.specs[currentLang])) {
         specsHtml += `
@@ -1011,8 +1111,8 @@ function quickViewProduct(productId) {
             </div>
         </div>
         <div class="modal-product-details-box">
-            <span class="modal-product-badge ${isEstate ? 'badge-aura' : ''}">
-                ${isEstate ? `✨ ${translations[currentLang].catEstate}` : translateCategory(product.category)}
+            <span class="modal-product-badge ${isECS ? 'badge-aura' : ''}">
+                ${isECS ? `✨ ${translations[currentLang].catEstate}` : translateCategory(product.category)}
             </span>
             <h2 class="modal-product-title">${product.title[currentLang]}</h2>
             
@@ -1020,6 +1120,14 @@ function quickViewProduct(productId) {
                 <span class="stars-gold">${'★'.repeat(Math.round(product.rating))}${'☆'.repeat(5 - Math.round(product.rating))}</span>
                 <span class="rating-val">${product.rating}</span>
                 <span class="rating-count">(${product.reviews} ${currentLang === 'he' ? 'ביקורות רוכשים' : 'customer reviews'})</span>
+            </div>
+
+            <!-- Dropshipping Urgency Viewer counts -->
+            <div class="urgency-banner" style="background: rgba(239, 68, 68, 0.08); padding: 10px; border-radius: 8px; border: 1px dashed #ef4444; margin: 10px 0; display: flex; align-items: center; gap: 8px;">
+                <span>🔥</span>
+                <span style="color: #ef4444; font-weight: 700; font-size: 0.85rem;">
+                    ${product.activeViewers} ${translations[currentLang].viewingText}
+                </span>
             </div>
 
             <p class="modal-product-desc">${product.description[currentLang]}</p>
@@ -1030,7 +1138,10 @@ function quickViewProduct(productId) {
                 </tbody>
             </table>
 
-            <div class="modal-price-tag">₪${product.price.toLocaleString()}</div>
+            <div class="modal-price-tag" style="color: #ef4444;">
+                ₪${product.price.toLocaleString()}
+                <span style="text-decoration: line-through; color: var(--text-muted); font-size: 1.1rem; margin-right: 8px;">₪${product.originalPrice.toLocaleString()}</span>
+            </div>
             
             <button class="btn btn-primary" onclick="addToCartFromModal('${product.id}')" style="margin-top: 15px;">
                 <span>${currentLang === 'he' ? 'הוסף לסל הקניות' : 'Add to Shopping Cart'}</span>
@@ -1091,7 +1202,7 @@ function handlePaymentSubmit(event) {
         payBtn.innerText = translations[currentLang].checkoutPayBtn;
         
         // Generate mock order number
-        const randomOrderNum = `EST-${Math.floor(10000 + Math.random() * 90000)}`;
+        const randomOrderNum = `ECS-${Math.floor(10000 + Math.random() * 90000)}`;
         document.getElementById('order-number-val').innerText = randomOrderNum;
 
         // Transition views
@@ -1189,7 +1300,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 window.addEventListener('appinstalled', (evt) => {
-    console.log('Estate App was installed.');
+    console.log('ECS App was installed.');
     const installBtn = document.getElementById('install-app-btn');
     if (installBtn) {
         installBtn.classList.add('hidden');

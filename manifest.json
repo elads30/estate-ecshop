@@ -1,7 +1,7 @@
 {
-  "name": "Estate Premium Store",
-  "short_name": "Estate",
-  "description": "Premium E-Commerce Store with Estate Brand Collection",
+  "name": "ECS Premium Dropship",
+  "short_name": "ECS",
+  "description": "Trending Dropshipping Products Store",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#0a0b10",
